@@ -25,6 +25,7 @@ https://iopscience.iop.org/article/10.1088/0022-3727/42/10/105109/pdf
 ![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/%E7%B0%A1%E5%A0%B11.jpg) 
 
 x : electron transport direction
+
 y and z are treated as infinite dimension approximation for dreducing the 3D problem to 1D.
 
 --------------------------------------------------------------------------------------------------------------------------------
