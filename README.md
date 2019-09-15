@@ -20,7 +20,7 @@ https://iopscience.iop.org/article/10.1088/0022-3727/42/10/105109/pdf
 
 ### Device Geometry :
 
-
+![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/%E7%B0%A1%E5%A0%B11.jpg) 
 
 ### Finite Difference Results :  
 
