@@ -6,7 +6,7 @@
 
 ## Numerical method references:
 
-### Two different approach using for simulating same problems. 
+*    Two different approach using for simulating same problems. 
 https://www.sciencedirect.com/science/article/pii/S0749603600909200
 
 
