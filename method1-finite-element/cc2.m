@@ -55,8 +55,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
             while in>0.01
                         sig1=zeros(Np);sig2=zeros(Np);rho=zeros(Np); II1=0;II2=0; II3=0;
                         
-                      
-  
+                     
                         %%Hamiltonian matrix FEM method
                         
                         H11 = (hbar^2)/(2*m*(a^2)*q);
@@ -112,17 +111,12 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
 %                                         jjj(NE,i,kV) = (1i)*(trace(HHH(i,i+1)*Gn(i+1,i)-HHH(i+1,i)*Gn(i,i+1)));
 %                                     end
 %                                     
-                                    
-                                    
-                                    
-                                    
-                                    
+                                            
                                     
                         end 
                         
                                                 n=(1/a)*real(diag(rho)); 
-  
-                                                
+                                                  
                         % Solve quasi-fermi-level using  bisection method
                         xup=100*ones(Np,1);
                         xlow=-100*ones(Np,1);
@@ -152,8 +146,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                     Fn = x; %this term contain Ef/kT  quasi-fermi-level
                                     
                         %correction dU from Poisson 
-                 
-                        
+                                   
                         D=zeros(Np,1);
                         for k=1:Np
 %                             z=(Fn(k)-U(k))/kT;
@@ -193,9 +186,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
 %                      in=(max(max(abs(dN))))/(max(max(Nd))) 
                       in=max(abs(dU))
                         
-                        
-                        
-                        
+                                   
             end
             
             
@@ -206,7 +197,6 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
             III3(:,kV) = II3;
                    
 end
-
 
 % hold on 
 % plot(XX,J(:,NV)) 
