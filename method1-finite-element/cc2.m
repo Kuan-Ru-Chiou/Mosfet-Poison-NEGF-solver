@@ -28,24 +28,12 @@ T=(2*t*diag(ones(1,Np)))-(t*diag(ones(1,Np-1),1))-...
 (t*diag(ones(1,Np-1),-1)); 
 
 
-
-
-
-
-
-
-
-
-
-
-  
 %energy grid 
 NE=501;E=linspace(-.25,.5,NE);dE=E(2)-E(1),zplus=i*1e-12; 
  
   
 
 %gate voltage
-
 % Vgg = -0.3;
 % Ug = Vgg*ones(Np,1);
 
@@ -53,8 +41,6 @@ NE=501;E=linspace(-.25,.5,NE);dE=E(2)-E(1),zplus=i*1e-12;
 
 %initial guess for U 
 U=[zeros(Ns,1);.2*ones(Nc,1);zeros(Ns,1)]; 
-
-
 
 
 %voltage bias steps 
@@ -71,7 +57,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                         
                       
   
-                        %%Hamiltonian matrix FEM
+                        %%Hamiltonian matrix FEM method
                         
                         H11 = (hbar^2)/(2*m*(a^2)*q);
                         H12 = -(hbar^2)/(2*m*(a^2)*q);
@@ -86,14 +72,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                         HH = HH+ (1/3)*diag([U(1:Np-1); 0]) + (1/3)*diag([0; U(2:Np)]);
                         HH =HH+(1/6)*diag(U(1:Np-1),1) + (1/6)*diag(U(1:Np-1),-1) +diag(H12*ones(Np-1,1),1)+diag(H12*ones(Np-1,1),-1);
     
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-
+                     
                         for k=1:NE 
                                     
                                     ck=1-((E(k)+zplus-U(1))/(2*t));ka=acos(ck); 
@@ -126,9 +105,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                     
                                     
   
-                                    
-                                                                                  %%%%%check internal
-% % %                                     
+                                    %%%%%check internal                                     
 %                                       HHH = T+diag(U);
 %                                     for i =1:Np-1
 %                                         
@@ -146,7 +123,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                                 n=(1/a)*real(diag(rho)); 
   
                                                 
-                        %solve quasi-fermi-level using  bisection method
+                        % Solve quasi-fermi-level using  bisection method
                         xup=100*ones(Np,1);
                         xlow=-100*ones(Np,1);
                         for kk=1:Np
@@ -187,11 +164,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                           
                         end
                         
-                        
-                        
-                        
-                        
-                        
+                                            
                         dN = 0.5*[n(1:Np-1)-Nd(1:Np-1); 0]+ 0.5*[0; n(2:Np)-Nd(2:Np)] + ((1/beta)*D2*U); %FEM
                         D =  0.5*[D(1:Np-1); 0]+ 0.5*[0 ;D(2:Np)];
                         
@@ -215,12 +188,8 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                     
                                     U=U+0.25*dU;
                         
-                        
-                        
-                        
-
-  
-                        %check for convergence 
+                      
+                        % Check for convergence 
 %                      in=(max(max(abs(dN))))/(max(max(Nd))) 
                       in=max(abs(dU))
                         
@@ -235,21 +204,17 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
             III1(:,kV) = II1;
             III2(:,kV) = II2;
             III3(:,kV) = II3;
-            
-            
-  
-            
-            
-            
-          
+                   
 end
 
 
 % hold on 
 % plot(XX,J(:,NV)) 
 %plot(XX,Fn)
+% plot electron potential in the device
 figure(1)
 plot(XX,UU(:,NV)) 
+% plot source to drain current
 figure(2)
 plot(VV,III1')
   
