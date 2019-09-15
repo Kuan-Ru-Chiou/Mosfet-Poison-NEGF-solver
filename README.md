@@ -18,3 +18,12 @@ https://iopscience.iop.org/article/10.1088/0022-3727/42/10/105109/pdf
 
 
 
+### Results 
+
+![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/1.png) 
+
+
+![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/2.png) 
+
+
+![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/3.jpg) 
