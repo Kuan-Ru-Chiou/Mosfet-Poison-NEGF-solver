@@ -33,3 +33,5 @@ Fig. 2 Energy position resolved energy/current profile for applied bias voltages
 
 
 ![kk](https://github.com/Kuan-Ru-Chiou/Pic/blob/master/3.jpg) 
+
+Fig. 3 Numerical results for finite difference method and finite element methods. The electron potential in the device and the source to drain current are shown in the left panels. Right panels are the relative errors for these two different methods.
