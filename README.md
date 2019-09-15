@@ -1,5 +1,7 @@
 # Mosfet-Poison-NEGF-solver
 
+## Abstract: The 1D mosfet device N++-N+-N++ geometry are simulated by using the non-equilibrium Green function method. The numerical results are compared to two different numerical approaches, finite element and finite difference methods. The result shows that these two methods relative error are small, which means that the two methods are consistent in modeling the device physics.
+
 
 
 ## 1D Mosfet NEGF-Poisson solver using two different numerical methods.
@@ -15,8 +17,6 @@ https://en.wikipedia.org/wiki/Newton%27s_method
 
 ### Finite element method is referenced to this article.
 https://iopscience.iop.org/article/10.1088/0022-3727/42/10/105109/pdf
-
-
 
 ### Device Geometry :
 
