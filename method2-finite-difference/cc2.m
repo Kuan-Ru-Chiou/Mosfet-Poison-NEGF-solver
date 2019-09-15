@@ -34,7 +34,6 @@ NE=501;E=linspace(-.25,.5,NE);dE=E(2)-E(1),zplus=i*1e-12;
   
 
 %gate voltage
-
 Vgg = 0;
 Ug = Vgg*[zeros(Ns,1); ones(Nc,1);zeros(Ns,1)];
 
@@ -44,14 +43,8 @@ Ug = Vgg*[zeros(Ns,1); ones(Nc,1);zeros(Ns,1)];
 % DD2([Ns+1:Ns+Nc],[Ns+1:Ns+Nc]) = -1;
 
 
-
-
-
-   
 %initial guess for U 
 U=[zeros(Ns,1);.2*ones(Nc,1);zeros(Ns,1)]; 
-
-
 
 
 %voltage bias steps 
@@ -94,11 +87,8 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                     
                                     II3 = II3+((q*q/hbar/2/pi)*dE)*trace(gam1*G*gam2*G')*(f1(k)-f2(k));
                                     
-                                    
-  
-                                    
-                                                                                  %%%%%check internal
-% % %                                     
+                            %check internal current conservation
+                                   
 %                                       HHH = T+diag(U);
 %                                     for i =1:Np-1
 %                                         
@@ -106,11 +96,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
 %                                     end
 %                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
+               
                         end 
                         
                                                 n=(1/a)*real(diag(rho)); 
@@ -140,8 +126,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                             x(kk)=(xup(kk)+xlow(kk))*0.5;
                         end
                         
-                                                
-                                                
+                              
                                     Fn = x; %this term contain Ef/kT  quasi-fermi-level
                                     
                         %correction dU from Poisson 
@@ -157,15 +142,7 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                           
                         end
                         
-                        
-                        
-                         
-                       
 
-                        
-                        
-                        
-                        
                          dN=n-Nd+((1/beta)*D2*U) -(1/beta)*Ug ; % gate voltage
                         
 %                         dN=n-Nd+((1/beta)*D2*U); %no gate voltage
@@ -187,18 +164,12 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
                                     
                                     U=U+0.25*dU;
                         
-                        
-                        
-                        
 
-  
-                        %check for convergence 
+                        %check for convergence poisson
 %                      in=(max(max(abs(dN))))/(max(max(Nd))) 
                       in=max(abs(dU))
                         
-                        
-                        
-                        
+           
             end
             
             
@@ -208,20 +179,16 @@ f1=n0*log(1+exp((mu-E)./kT));f2=n0*log(1+exp((mu-V-E)./kT));
             III2(:,kV) = II2;
             III3(:,kV) = II3;
             
-            
-  
-            
-            
-            
-          
+    
 end
-
 
 % hold on 
 % plot(XX,J(:,NV)) 
 %plot(XX,Fn)
+%plot electron potential in the device
 figure(1)
 plot(XX,UU(:,NV)) 
+%plot source to drain current in the device
 figure(2)
 plot(VV,III1')
   
