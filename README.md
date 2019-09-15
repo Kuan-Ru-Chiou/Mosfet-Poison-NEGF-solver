@@ -15,7 +15,7 @@ https://en.wikipedia.org/wiki/Newton%27s_method
 
 
 
-### Finite element method is referenced to this article.
+### Finite element method.
 https://iopscience.iop.org/article/10.1088/0022-3727/42/10/105109/pdf
 
 ------------------------------------------------------------------------------------------------------------------------------
